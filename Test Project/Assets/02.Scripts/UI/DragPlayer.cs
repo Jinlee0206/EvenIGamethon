@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DragPlayer : MonoBehaviour
 {
-    public RuntimeAnimatorController[] animCon; //0. ±âº», 1. ÆÄ´Ú, 2. »ç°ú, 3. Ãã, 4. Ã¥
+    public RuntimeAnimatorController[] animCon; //0. ±âº», 1. ÆÄ´Ú, 2. »ç°ú, 3. Ãã, 4. Ã¥, 5. ²É, 6. ÇÏÆ®
     public BoxCollider2D[] zones;               //0. »ç°ú, 1. Ãã, 2. Ã¥
 
     private Vector3 offset;
@@ -29,6 +29,15 @@ public class DragPlayer : MonoBehaviour
         else if (collision.gameObject.name == "ReadZone")
         {
             anim.runtimeAnimatorController = animCon[4];
+        }
+        else if(collision.gameObject.name == "FlowerZone")
+        {
+            anim.runtimeAnimatorController = animCon[5];
+        }
+        else if(collision.gameObject.name == "HeartZone")
+        {
+            anim.runtimeAnimatorController = animCon[6];
+            //gameObject.transform.position = new Vector3(gameObject.transform.position.x + 10, gameObject.transform.position.y, gameObject.transform.position.z);
         }
     }
 
